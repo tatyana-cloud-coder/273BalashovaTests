@@ -4,49 +4,34 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
 
-public class SceneryPage {
+public class FavoritePage {
 
     WebDriver driver;
     private WebDriverWait wait;
 
-    public SceneryPage(WebDriver driver) {
+    public FavoritePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-
-    @FindBy(css = "img[alt='Трамвайный путь. Гвоздецкая Татьяна']")
-    private WebElement Way;
-
-
-
-
-
-
-    public void goToDetailsWay () {
-        Way.click();
-    }
-
-    public void checkWay (String s) {
+    public void reviewFavorite(String Name) {
         Boolean factResult = false;
-        List <WebElement> sceneries = driver.findElements(By.xpath("//div[@class='post']"));
-        System.out.println(s);
-        for (WebElement scenery: sceneries) {
-            System.out.println(scenery.getText());
-            if (scenery.getText().contains(s)) {
+        List<WebElement> Pictures = driver.findElements(By.xpath("//img[@class='bubu']"));
+        for (WebElement picture: Pictures) {
+            if (picture.getAttribute("src").equals(Name))  {
                 factResult = true;
                 break;
             }
         }
         Assert.assertEquals(true, factResult);
-
     }
+
+
 }

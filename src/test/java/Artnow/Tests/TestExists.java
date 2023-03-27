@@ -1,8 +1,6 @@
 package Artnow.Tests;
 
-import Artnow.Pages.EmbroideredPicturesPage;
-import Artnow.Pages.HomePage;
-import Artnow.Pages.SceneryPage;
+import Artnow.Pages.*;
 import Artnow.Settings.WebDriverSettings;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
@@ -28,8 +26,8 @@ public class TestExists extends WebDriverSettings {
         embroideredPicturesPage.checkCityShape();
         //нажать на "Применить"
         embroideredPicturesPage.clickOnApplyButton();
-   //     SceneryPage sceneryPage = new SceneryPage(chromeDriver);
-      //  sceneryPage.checkWay("Трамвайный путь");
+        SceneryPage sceneryPage = new SceneryPage(chromeDriver);
+        sceneryPage.checkWay("Трамвайный путь");
     }
 
     //2.2
@@ -48,6 +46,7 @@ public class TestExists extends WebDriverSettings {
         //нажать на "Применить"
         embroideredPicturesPage.clickOnApplyButton();
         SceneryPage sceneryPage = new SceneryPage(chromeDriver);
+        //перейти в детали картины "Трамвайный путь"
         sceneryPage.goToDetailsWay();
 
     }
@@ -62,6 +61,16 @@ public class TestExists extends WebDriverSettings {
         homePage.clickOnShowMore();
         //перейти в "Батик"
         homePage.goToBatik();
+        BatikPage batikPage = new BatikPage(chromeDriver);
+        //получить название картины, добавляемой в избранное
+        String name = batikPage.getSrcOfFavoritePicture();
+        //добавить первую картинку в "Избранное"
+        batikPage.addToFavorite();
+        //перейти в "Избранное"
+        batikPage.goToFavorite();
+        FavoritePage favoritePage = new FavoritePage(chromeDriver);
+        //проверить, что картина с полученным названием сохранилась в избранном
+        favoritePage.reviewFavorite(name);
     }
 
     //2.4
@@ -70,8 +79,13 @@ public class TestExists extends WebDriverSettings {
         HomePage homePage=new HomePage(chromeDriver);
         //открыть сайт
         homePage.openSite();
+        String s = "Жираф";
         //заполнить поисковую строку словом "Жираф"
-        homePage.SearchPictures("жираф");
+        homePage.SearchPictures(s);
+        SearchPage searchPage = new SearchPage(chromeDriver);
+        //проверить, что название первой картины содержит слово "Жираф"
+        searchPage.checkContainsFirstPictureInputName(s);
+
     }
 
     //2.5
@@ -84,5 +98,20 @@ public class TestExists extends WebDriverSettings {
         homePage.clickOnShowMore();
         //перейти в "Ювелирное искусство"
         homePage.goToJewelryArt();
+        JewerlyArtPage jewerlyArtPage = new JewerlyArtPage(chromeDriver);
+        //получить src первого изделия
+        String src = jewerlyArtPage.getSrcOfFirstProduct();
+        //получить стоимость первого изделия
+        String cost = jewerlyArtPage.getCostOfFirstProduct();
+        //добавить первое изделие в корзину
+        jewerlyArtPage.addToBacket();
+        //перейти в корзину
+        jewerlyArtPage.goToBacket();
+        BasketPage basketPage = new BasketPage(chromeDriver);
+        //проверить, что товар есть в корзине и его стоимость совпадает
+        basketPage.reviewBasket(src, cost);
+
+
+
     }
 }

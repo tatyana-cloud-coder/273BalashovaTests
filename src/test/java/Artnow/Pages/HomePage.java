@@ -36,7 +36,7 @@ public class HomePage {
     @FindBy (xpath = "//button[text()='Искать']")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//span[@class='search-bar']")
+    @FindBy(xpath = "//input[@class = 'inp scLarge']")
     private WebElement filter;
 
     public void openSite() {
