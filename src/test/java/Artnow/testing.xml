@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Test-Suite" >
+    <test name="ChromeTests" >
+        <parameter name="browser" value= "chrome" />
+        <parameter name="number" value= "1" />
+        <classes>
+            <class name="Artnow.Tests.TestExists" />
+        </classes>
+    </test>
+    <test name="FirefoxTests" >
+        <parameter name="browser" value= "firefox" />
+        <parameter name="number" value= "2" />
+        <classes>
+            <class name="Artnow.Tests.TestExists" />
+        </classes>
+    </test>
+</suite>

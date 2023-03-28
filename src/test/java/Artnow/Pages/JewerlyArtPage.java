@@ -27,23 +27,25 @@ public class JewerlyArtPage {
     @FindBy(xpath = "//button[@onClick='sendCartForm();']")
     private WebElement backetButton;
 
-    public void addToBacket () {
+    public void addToBacket (int number) {
+        List <WebElement> products = driver.findElements(By.xpath("//div[@class='oclick']"));
+        products.get(number).click();
 
-      costButton.click();
+     // costButton.click();
     }
 
     public void goToBacket () {
         backetButton.click();
     }
 
-    public String getSrcOfFirstProduct() {
+    public String getSrcOfFirstProduct(int number) {
         List <WebElement> products = driver.findElements(By.xpath("//img[@class='bubu']"));
-        return products.get(0).getAttribute("src");
+        return products.get(number).getAttribute("src");
     }
 
-    public String getCostOfFirstProduct() {
+    public String getCostOfFirstProduct(int number) {
         List <WebElement> products = driver.findElements(By.xpath("//meta[@itemprop='price']"));
-        return products.get(0).getAttribute("content");
+        return products.get(number).getAttribute("content");
     }
 
 }
