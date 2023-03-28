@@ -2,17 +2,24 @@ package Artnow.Tests;
 
 import Artnow.Pages.*;
 import Artnow.Settings.WebDriverSettings;
+import io.qameta.allure.Description;
 import org.junit.Test;
+import io.qameta.allure.Description;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 
 
 public class TestExists extends WebDriverSettings {
 
-    //2.1
     @Test
+    @Description("2.1 Перейти в “Вышитые картины”, произвести поиск по жанру \n" +
+            "«Городской пейзаж», проверить, что картина “Трамвайный путь” \n" +
+            "присутствует в выдаче.")
     public void testExists () {
         HomePage homePage=new HomePage(chromeDriver);
         //открыть сайт
@@ -30,8 +37,10 @@ public class TestExists extends WebDriverSettings {
         sceneryPage.checkWay("Трамвайный путь");
     }
 
-    //2.2
     @Test
+    @Description("2.2 Перейти в “Вышитые картины”, произвести поиск по жанру \n" +
+            "«Городской пейзаж», открыть подробности картины “Трамвайный путь”, \n" +
+            "проверить, что стиль картины «Реализм».")
     public void testStyle () {
         HomePage homePage=new HomePage(chromeDriver);
         //открыть сайт
@@ -51,8 +60,10 @@ public class TestExists extends WebDriverSettings {
 
     }
 
-    //2.3
+    //
     @Test
+    @Description("2.3. Перейти в “Батик”, добавить первую картину в избранное, проверить, \n" +
+            "что выбранная картина сохранилась в разделе «Избранное».")
     public void testFavorites () {
         HomePage homePage=new HomePage(chromeDriver);
         //открыть сайт
@@ -73,8 +84,9 @@ public class TestExists extends WebDriverSettings {
         favoritePage.reviewFavorite(name);
     }
 
-    //2.4
     @Test
+    @Description("2.4 Ввести в поисковую строку «Жираф», проверить, что название первой \n" +
+            "картины содержит слово «Жираф».")
     public void testSearch () {
         HomePage homePage=new HomePage(chromeDriver);
         //открыть сайт
@@ -88,8 +100,10 @@ public class TestExists extends WebDriverSettings {
 
     }
 
-    //2.5
     @Test
+    @Description("2.5 Перейти в “Ювелирное искусство”, добавить первое изделие в \n" +
+            "корзину, проверить, что выбранный товар находится в корзине, стоимость \n" +
+            "товара не изменилась")
     public void testBasket () {
         HomePage homePage=new HomePage(chromeDriver);
         //открыть сайт
@@ -110,8 +124,6 @@ public class TestExists extends WebDriverSettings {
         BasketPage basketPage = new BasketPage(chromeDriver);
         //проверить, что товар есть в корзине и его стоимость совпадает
         basketPage.reviewBasket(src, cost);
-
-
 
     }
 }

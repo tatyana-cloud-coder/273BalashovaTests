@@ -28,7 +28,8 @@ public class JewerlyArtPage {
     private WebElement backetButton;
 
     public void addToBacket () {
-        costButton.click();
+
+      costButton.click();
     }
 
     public void goToBacket () {

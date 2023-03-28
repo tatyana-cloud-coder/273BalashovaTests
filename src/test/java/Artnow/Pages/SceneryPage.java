@@ -23,7 +23,7 @@ public class SceneryPage {
     }
 
 
-    @FindBy(css = "img[alt='Трамвайный путь. Гвоздецкая Татьяна']")
+    @FindBy(xpath = "//img[@alt= 'Трамвайный путь. Гвоздецкая Татьяна']")
     private WebElement Way;
 
 
