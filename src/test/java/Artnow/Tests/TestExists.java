@@ -52,7 +52,7 @@ public class TestExists extends WebDriverSettings {
         //перейти в детали картины "Трамвайный путь"
         sceneryPage.goToDetailsWay();
         DetailsWayPage detailsWayPage=  new DetailsWayPage(webDriver);
-        detailsWayPage.checkStyle("Реализм");
+        detailsWayPage.checkStyle("Реализм2");
 
 
     }

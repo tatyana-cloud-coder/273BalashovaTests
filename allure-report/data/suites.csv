@@ -1,0 +1,27 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Mar 29 21:57:50 GMT+04:00 2023","Wed Mar 29 21:58:04 GMT+04:00 2023","14632","Test-Suite","FirefoxTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testFavorites","testFavorites","2.3. Перейти в “Батик”, добавить первую картину в избранное, проверить, 
+что выбранная картина сохранилась в разделе «Избранное»."
+"passed","Wed Mar 29 21:55:35 GMT+04:00 2023","Wed Mar 29 21:55:47 GMT+04:00 2023","12269","Test-Suite","ChromeTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testFavorites","testFavorites","2.3. Перейти в “Батик”, добавить первую картину в избранное, проверить, 
+что выбранная картина сохранилась в разделе «Избранное»."
+"failed","Wed Mar 29 21:56:07 GMT+04:00 2023","Wed Mar 29 21:56:36 GMT+04:00 2023","29523","Test-Suite","ChromeTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testStyle","testStyle","2.2 Перейти в “Вышитые картины”, произвести поиск по жанру 
+«Городской пейзаж», открыть подробности картины “Трамвайный путь”, 
+проверить, что стиль картины «Реализм»."
+"passed","Wed Mar 29 21:55:18 GMT+04:00 2023","Wed Mar 29 21:55:32 GMT+04:00 2023","14022","Test-Suite","ChromeTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testExists","testExists","2.1 Перейти в “Вышитые картины”, произвести поиск по жанру 
+«Городской пейзаж», проверить, что картина “Трамвайный путь” 
+присутствует в выдаче."
+"passed","Wed Mar 29 21:57:21 GMT+04:00 2023","Wed Mar 29 21:57:35 GMT+04:00 2023","14276","Test-Suite","FirefoxTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testExists","testExists","2.1 Перейти в “Вышитые картины”, произвести поиск по жанру 
+«Городской пейзаж», проверить, что картина “Трамвайный путь” 
+присутствует в выдаче."
+"passed","Wed Mar 29 21:58:24 GMT+04:00 2023","Wed Mar 29 21:58:36 GMT+04:00 2023","12429","Test-Suite","FirefoxTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testSearch","testSearch","2.4 Ввести в поисковую строку «Жираф», проверить, что название первой 
+картины содержит слово «Жираф»."
+"failed","Wed Mar 29 21:58:52 GMT+04:00 2023","Wed Mar 29 21:59:12 GMT+04:00 2023","19638","Test-Suite","FirefoxTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testStyle","testStyle","2.2 Перейти в “Вышитые картины”, произвести поиск по жанру 
+«Городской пейзаж», открыть подробности картины “Трамвайный путь”, 
+проверить, что стиль картины «Реализм»."
+"passed","Wed Mar 29 21:55:51 GMT+04:00 2023","Wed Mar 29 21:56:03 GMT+04:00 2023","12464","Test-Suite","ChromeTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testSearch","testSearch","2.4 Ввести в поисковую строку «Жираф», проверить, что название первой 
+картины содержит слово «Жираф»."
+"passed","Wed Mar 29 21:55:05 GMT+04:00 2023","Wed Mar 29 21:55:15 GMT+04:00 2023","9385","Test-Suite","ChromeTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testBasket","testBasket","2.5 Перейти в “Ювелирное искусство”, добавить первое изделие в 
+корзину, проверить, что выбранный товар находится в корзине, стоимость 
+товара не изменилась"
+"passed","Wed Mar 29 21:56:47 GMT+04:00 2023","Wed Mar 29 21:57:06 GMT+04:00 2023","19527","Test-Suite","FirefoxTests","Artnow.Tests.TestExists","Artnow.Tests.TestExists","testBasket","testBasket","2.5 Перейти в “Ювелирное искусство”, добавить первое изделие в 
+корзину, проверить, что выбранный товар находится в корзине, стоимость 
+товара не изменилась"

@@ -31,7 +31,7 @@ public class JewerlyArtPage {
         List <WebElement> products = driver.findElements(By.xpath("//div[@class='oclick']"));
         products.get(number).click();
 
-     // costButton.click();
+
     }
 
     public void goToBacket () {

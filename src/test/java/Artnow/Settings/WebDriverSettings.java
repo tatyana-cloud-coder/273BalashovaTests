@@ -1,5 +1,6 @@
 package Artnow.Settings;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,6 +13,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
+import java.io.ByteArrayInputStream;
 
 public class WebDriverSettings {
     public static WebDriver webDriver;
@@ -37,13 +40,13 @@ public class WebDriverSettings {
     @AfterMethod
     public void catchFailure(ITestResult result) {
         if (!result.isSuccess()) {
-            takeScreenshot();
+            ByteArrayInputStream screenshotBytes = takeScreenshot();
+            Allure.addAttachment("ErrorScreenshot", screenshotBytes);
         }
     }
 
-    @Attachment(value = "Screenshot")
-    public byte[] takeScreenshot() {
-        return ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
+    public ByteArrayInputStream takeScreenshot() {
+        return new ByteArrayInputStream(((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES));
     }
 
 
